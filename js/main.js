@@ -38,4 +38,4 @@ function mostrarHora() {
     }
 }
 
-setInterval(mostrarHora);
+setInterval(mostrarHora, 100);
