@@ -18,7 +18,7 @@ const meses = [
 function mostrarHora() {
     const d = new Date();
 
-    const dia = d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear();
+    const dia = `${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}`;
 
     const hora = (d.getHours() < 10) ? "0" + d.getHours() : d.getHours();
     const minutos = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
@@ -31,7 +31,7 @@ function mostrarHora() {
     document.getElementById("hora").innerHTML = hora_completa;
 
     const element = document.getElementById("principal");
-    if (d.getMinutes() != 0 && d.getSeconds() % 2 === 0) {
+    if (d.getMinutes() === 0 && d.getSeconds() % 2 === 0) {
         element.classList.add("en-punto");
     }else{
         element.classList.remove("en-punto");
