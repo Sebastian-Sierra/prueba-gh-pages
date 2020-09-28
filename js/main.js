@@ -30,7 +30,7 @@ function mostrarHora() {
     document.getElementById("dia").innerHTML = dia;
     document.getElementById("hora").innerHTML = hora_completa;
 
-    const element = document.getElementById("principal");
+    let element = document.getElementById("principal");
     if (d.getMinutes() === 0 && d.getSeconds() % 2 === 0) {
         element.classList.add("en-punto");
     }else{
@@ -39,3 +39,11 @@ function mostrarHora() {
 }
 
 setInterval(mostrarHora, 100);
+
+document.getElementById("btn-deshabilitar").addEventListener("click", (element)=>{
+    if(document.getElementById("principal").style.display == ""){
+        document.getElementById("principal").style = "display: none";
+    }else{
+        document.getElementById("principal").style = "";
+    }
+});

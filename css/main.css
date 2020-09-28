@@ -24,3 +24,9 @@
 .en-punto{
     filter: invert(100%);
 }
+
+#btn-deshabilitar{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
