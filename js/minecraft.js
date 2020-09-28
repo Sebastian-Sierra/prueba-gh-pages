@@ -26,7 +26,6 @@ function obtenerCoordenadas(){
     </table>`;
 
     document.getElementById("coordenadas").innerHTML = codigo;
-    console.log(coords);
 }
 
 document.getElementById("form-coords").addEventListener("submit", agregarCoordenadas)
