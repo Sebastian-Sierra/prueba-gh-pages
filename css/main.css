@@ -18,24 +18,9 @@
     color: #ffffff;
     font-size: 7rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .en-punto{
     filter: invert(100%);
-}
-
-#minecraft{
-    background-color: #888888;
-    padding: 30px 0;
-}
-
-@media(max-width:768px){
-    #principal{
-        font-size: 5rem;
-    }
-}
-@media(max-width:576px){
-    #principal{
-        font-size: 3rem;
-    }
 }

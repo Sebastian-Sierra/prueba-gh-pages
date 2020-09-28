@@ -2,24 +2,26 @@ function obtenerCoordenadas(){
 
     let coords = JSON.parse(localStorage.getItem("coords"));
 
-    let codigo = `<table class="table table-bordered table-light table-hover">
+    let codigo = `<table class="table table-striped table-light table-hover">
     <thead class="thead-dark">
       <th>Lugar</th>
-      <th>Pos. X</th>
-      <th>Pos. Y</th>
-      <th>Pos. Z</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
       <th>Acciones</th>
     </thead>
     <tbody>`;
 
-    for (let i = 0; i < coords.length; i++) {
-        codigo += `<tr>
-        <td>${coords[i].lugar}</td>
-        <td>${coords[i].posX}</td>
-        <td>${coords[i].posY}</td>
-        <td>${coords[i].posZ}</td>
-        <td><button onclick="eliminarCoord(${i})" class="btn btn-danger">Eliminar</button></td>
-        </tr>`;
+    if(coords){
+        for (let i = 0; i < coords.length; i++) {
+            codigo += `<tr>
+            <td>${coords[i].lugar}</td>
+            <td>${coords[i].posX}</td>
+            <td>${coords[i].posY}</td>
+            <td>${coords[i].posZ}</td>
+            <td><button onclick="eliminarCoord(${i})" class="btn btn-danger btn-sm">Eliminar</button></td>
+            </tr>`;
+        }
     }
 
     codigo += `</tbody>
