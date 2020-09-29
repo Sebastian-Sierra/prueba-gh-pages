@@ -40,10 +40,12 @@ function mostrarHora() {
 
 setInterval(mostrarHora, 100);
 
-document.getElementById("btn-deshabilitar").addEventListener("click", (element)=>{
+document.getElementById("btn-deshabilitar").addEventListener("click", (e)=>{
     if(document.getElementById("principal").style.display == ""){
         document.getElementById("principal").style = "display: none";
+        e.target.innerHTML = "▼";
     }else{
         document.getElementById("principal").style = "";
+        e.target.innerHTML = "▲";
     }
 });
