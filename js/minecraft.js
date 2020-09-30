@@ -19,7 +19,7 @@ function obtenerCoordenadas(){
             <td>${coords[i].posX}</td>
             <td>${coords[i].posY}</td>
             <td>${coords[i].posZ}</td>
-            <td><button onclick="eliminarCoord(${i})" class="btn btn-danger btn-sm">Eliminar</button></td>`;
+            <td><button onclick="eliminarCoord(${i})" class="btn btn-danger">X</button></td>`;
             tr.innerHTML = codigo;
             tbody.appendChild(tr);
         }
