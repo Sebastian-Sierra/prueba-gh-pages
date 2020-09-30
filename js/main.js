@@ -19,8 +19,9 @@ function mostrarHora() {
     const d = new Date();
 
     const dia = `${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}`;
-
-    const hora = (d.getHours() < 10) ? "0" + d.getHours() : d.getHours();
+    
+    var hora = (d.getHours() > 12) ? (d.getHours() - 12) : d.getHours();
+    hora = (hora < 10) ? "0" + hora : hora;
     const minutos = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
     const segundos = (d.getSeconds() < 10) ? "0" + d.getSeconds() : d.getSeconds();
 
