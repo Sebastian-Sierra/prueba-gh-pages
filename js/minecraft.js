@@ -2,32 +2,29 @@ function obtenerCoordenadas(){
 
     let coords = JSON.parse(localStorage.getItem("coords"));
 
-    let codigo = `<table class="table table-striped table-light table-hover">
-    <thead class="thead-dark">
-      <th>Lugar</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
-      <th>Acciones</th>
-    </thead>
-    <tbody>`;
+    var table = document.getElementById("table-minecraft");
+    var tr_form = document.getElementById("tr-form");
+    
+    document.getElementById("coordenadas").remove();
+    
+    var tbody = document.createElement("TBODY");
+    tbody.appendChild(tr_form);
+    tbody.id = "coordenadas";
 
     if(coords){
         for (let i = 0; i < coords.length; i++) {
-            codigo += `<tr>
+            var tr = document.createElement("TR");
+            var codigo = `
             <td>${coords[i].lugar}</td>
             <td>${coords[i].posX}</td>
             <td>${coords[i].posY}</td>
             <td>${coords[i].posZ}</td>
-            <td><button onclick="eliminarCoord(${i})" class="btn btn-danger btn-sm">Eliminar</button></td>
-            </tr>`;
+            <td><button onclick="eliminarCoord(${i})" class="btn btn-danger btn-sm">Eliminar</button></td>`;
+            tr.innerHTML = codigo;
+            tbody.appendChild(tr);
         }
     }
-
-    codigo += `</tbody>
-    </table>`;
-
-    document.getElementById("coordenadas").innerHTML = codigo;
+    table.appendChild(tbody);
 }
 
 document.getElementById("form-coords").addEventListener("submit", agregarCoordenadas)
