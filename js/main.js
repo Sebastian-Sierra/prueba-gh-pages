@@ -4,7 +4,7 @@ const dias_semana = [
     "Martes",
     "Miercoles",
     "Jueves",
-    "Vierne",
+    "Viernes",
     "Sabado"
 ];
 
